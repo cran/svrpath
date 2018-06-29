@@ -5,13 +5,13 @@
 #' @param y The real number valued response variable
 #' @param lambda The regularization parameter value.
 #' @param kernel.function User defined kernel function. See \code{svmpath}.
-#' @param param.kernel parameter(s) of the kernels. See \code{svmpath}.
+#' @param param.kernel Parameter(s) of the kernels. See \code{svmpath}.
 #' @param eps.min The smallest value of epsilon for termination of the algorithm. Default is \code{eps.min = 1e-8}
 #' @param ridge Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}
-#' @param eps a small machine number which is used to identify minimal step sizes
+#' @param eps A small machine number which is used to identify minimal step sizes
 #' @param ... Generic compatibility
-#' @return a 'epspath' object is returned.
-#' @author Dohyun Kim, Seung Jun Shin
+#' @return An 'epspath' object is returned.
+#' @author Do Hyun Kim, Seung Jun Shin
 #' @seealso \code{\link{predict.epspath}}, \code{\link{plot.epspath}}, \code{\link{svrpath}}
 #' @examples
 #' set.seed(1)
@@ -23,7 +23,7 @@
 #' beta <- c(1, 1, rep(0, p-2))
 #' y <- x %*% beta + e
 #' lambda <- 1
-#' obj <- epspath(x, y, lambda = lambda)
+#' eobj <- epspath(x, y, lambda = lambda)
 #' @importFrom svmpath poly.kernel radial.kernel UpdateKstar SolveKstar
 #' @export
 epspath <- function(x, y, lambda = 1,

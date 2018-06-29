@@ -1,12 +1,4 @@
-#' SVR internal functions
-#'
-#' Internal svrpath functions
-#' @importFrom stats optimize quantile step
-#'
-#' @name svrpath-internal
-NULL
-#' @rdname svrpath-internal
-#' @export
+#' @importFrom stats optimize quantile
 Initialization <- function(x, y, svr.eps= 1,kernel.function = radial.kernel, param.kernel = 1){
 
   eps <- svr.eps

@@ -1,5 +1,3 @@
-#' @rdname svrpath-internal
-#' @export
 svr.sic <- function(obj){
 
   sic <- rep(0, length(obj$lambda))

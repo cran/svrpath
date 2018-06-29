@@ -1,5 +1,3 @@
-#' @rdname svrpath-internal
-#' @export
 svr.gacv <- function(obj){
   gacv <- rep(0, length(obj$lambda))
   n <- length(obj$y)

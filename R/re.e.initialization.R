@@ -1,5 +1,3 @@
-#' @rdname svrpath-internal
-#' @export
 re.e.Initialization <- function(x,y,Left, Right, Center, svr.eps = svr.eps[k], lambda = 1,
                                 kernel.function = radial.kernel, param.kernel = 1){
 

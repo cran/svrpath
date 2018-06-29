@@ -1,4 +1,4 @@
-#' Make predictions from a "epspath" object
+#' Make predictions from an "epspath" object
 #'
 #' Provides a prediction value at a given \code{epsilon} from \code{epspath} object.
 #' @param object The epspath object
@@ -6,20 +6,11 @@
 #' @param svr.eps The value of the "epsilon-insensitive loss" paramter, epsilon.
 #' @param ... Generic compatibility
 #' @return In each case, the desired prediction.
-#' @author Dohyun Kim, Seung Jun Shin
+#' @author Do Hyun Kim, Seung Jun Shin
 #' @examples
-#' set.seed(1)
-#' n <- 30
-#' p <- 50
-#'
-#' x <- matrix(rnorm(n*p), n, p)
-#' e <- rnorm(n, 0, 1)
-#' beta <- c(1, 1, rep(0, p-2))
-#' y <- x %*% beta + e
-#' lambda <- 1
-#' obj <- epspath(x, y, lambda = lambda)
-#' predict(obj, svr.eps = .1)
-#'
+#' \donttest{
+#' # The 'eobj' is given by examples description of epspath().
+#' predict(eobj, svr.eps = .1) }
 #' @export predict.epspath
 #' @export
 predict.epspath <- function(object, newx, svr.eps = 1,...){

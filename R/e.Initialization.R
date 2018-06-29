@@ -1,5 +1,3 @@
-#' @rdname svrpath-internal
-#' @export
 e.Initialization <- function(x, y, lambda = 1,
                              kernel.function = radial.kernel, param.kernel = 1){
 

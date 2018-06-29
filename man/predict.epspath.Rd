@@ -2,7 +2,7 @@
 % Please edit documentation in R/predict.epspath.R
 \name{predict.epspath}
 \alias{predict.epspath}
-\title{Make predictions from a "epspath" object}
+\title{Make predictions from an "epspath" object}
 \usage{
 \method{predict}{epspath}(object, newx, svr.eps = 1, ...)
 }
@@ -22,19 +22,10 @@ In each case, the desired prediction.
 Provides a prediction value at a given \code{epsilon} from \code{epspath} object.
 }
 \examples{
-set.seed(1)
-n <- 30
-p <- 50
-
-x <- matrix(rnorm(n*p), n, p)
-e <- rnorm(n, 0, 1)
-beta <- c(1, 1, rep(0, p-2))
-y <- x \%*\% beta + e
-lambda <- 1
-obj <- epspath(x, y, lambda = lambda)
-predict(obj, svr.eps = .1)
-
+\donttest{
+# The 'eobj' is given by examples description of epspath().
+predict(eobj, svr.eps = .1) }
 }
 \author{
-Dohyun Kim, Seung Jun Shin
+Do Hyun Kim, Seung Jun Shin
 }

@@ -16,18 +16,18 @@ epspath(x, y, lambda = 1, kernel.function = radial.kernel,
 
 \item{kernel.function}{User defined kernel function. See \code{svmpath}.}
 
-\item{param.kernel}{parameter(s) of the kernels. See \code{svmpath}.}
+\item{param.kernel}{Parameter(s) of the kernels. See \code{svmpath}.}
 
 \item{ridge}{Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}}
 
-\item{eps}{a small machine number which is used to identify minimal step sizes}
+\item{eps}{A small machine number which is used to identify minimal step sizes}
 
 \item{eps.min}{The smallest value of epsilon for termination of the algorithm. Default is \code{eps.min = 1e-8}}
 
 \item{...}{Generic compatibility}
 }
 \value{
-a 'epspath' object is returned.
+An 'epspath' object is returned.
 }
 \description{
 The Suport Vector Regression (SVR) employs epsilon-intensive loss which ignores errors smaller than epsilon. This algorithm computes the entire paths for SVR solution as a function of \code{epsilon} at a given regularization parameter \code{lambda}, which we call \code{epsilon} path.
@@ -42,11 +42,11 @@ e <- rnorm(n, 0, 1)
 beta <- c(1, 1, rep(0, p-2))
 y <- x \%*\% beta + e
 lambda <- 1
-obj <- epspath(x, y, lambda = lambda)
+eobj <- epspath(x, y, lambda = lambda)
 }
 \seealso{
 \code{\link{predict.epspath}}, \code{\link{plot.epspath}}, \code{\link{svrpath}}
 }
 \author{
-Dohyun Kim, Seung Jun Shin
+Do Hyun Kim, Seung Jun Shin
 }

@@ -3,25 +3,18 @@
 #' Provides a prediction value at a given \code{lambda} from \code{svrpath} object.
 #' @param object The svrpath object
 #' @param newx Values of x to be predicted. This is a matrix with observations per row. Default is x in the epspath object.
-#' @param lambda the value of the regularization paramter, lambda.
+#' @param lambda The value of the regularization paramter, lambda.
 #' @param criterion It provides predictions at an optimal \code{lambda} selected by SIC or GACV. \code{"sic"} or \code{"gacv"}.
 #' @param ... Generic compatibility
 #' @return In each case, the desired prediction.
-#' @author Dohyun Kim, Seung Jun Shin
+#' @author Do Hyun Kim, Seung Jun Shin
 #'
 #' @examples
-#' set.seed(1)
-#' n <- 30
-#' p <- 50
-#'
-#' x <- matrix(rnorm(n*p), n, p)
-#' e <- rnorm(n, 0, 1)
-#' beta <- c(1, 1, rep(0, p-2))
-#' y <- x %*% beta + e
-#' svr.eps <- 1
-#' obj <- svrpath(x, y, svr.eps = svr.eps)
+#' \donttest{
+#' # The 'eobj' is given by examples description of epspath().
 #' predict.svrpath(obj, lambda = 10) # or
-#' predict(obj, criterion = 'sic')
+#' predict(obj, criterion = 'sic') }
+#'
 #' @importFrom stats approx
 #'
 #' @export

@@ -4,16 +4,17 @@
 #'
 #' @param a The data matrix (n x p) with n rows (observations) on p variables (columns)
 #' @param b The real number valued response variable
-#' @param lambda the regularization parameter
-#' @param svr.eps epsilon in epsion-insensitive loss function
+#' @param lambda The regularization parameter
+#' @param svr.eps Epsilon in epsion-insensitive loss function
 #' @param kernel.function User defined kernel function. See \code{svmpath}.
-#' @param param.kernel parameter(s) of the kernels. See \code{svmpath}.
+#' @param param.kernel Parameter(s) of the kernels. See \code{svmpath}.
 #' @param ... Generic compatibility
 #'
 #' @return SVR solution at a given \code{lambda} and \code{epsilon}
 #' @author Dohyun Kim, Seung Jun Shin
 #' @examples
-#' #' set.seed(1)
+#' \donttest{
+#' # set.seed(1)
 #' n <- 30
 #' p <- 50
 #'
@@ -21,7 +22,7 @@
 #' e <- rnorm(n, 0, 1)
 #' beta <- c(1, 1, rep(0, p-2))
 #' y <- x %*% beta + e
-#' solve.svr(x, y)
+#' solve.svr(x, y) }
 #'
 #' @importFrom quadprog solve.QP
 #' @importFrom svmpath poly.kernel radial.kernel UpdateKstar SolveKstar

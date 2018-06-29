@@ -12,13 +12,13 @@
 
 \item{b}{The real number valued response variable}
 
-\item{lambda}{the regularization parameter}
+\item{lambda}{The regularization parameter}
 
-\item{svr.eps}{epsilon in epsion-insensitive loss function}
+\item{svr.eps}{Epsilon in epsion-insensitive loss function}
 
 \item{kernel.function}{User defined kernel function. See \code{svmpath}.}
 
-\item{param.kernel}{parameter(s) of the kernels. See \code{svmpath}.}
+\item{param.kernel}{Parameter(s) of the kernels. See \code{svmpath}.}
 
 \item{...}{Generic compatibility}
 }
@@ -29,7 +29,8 @@ SVR solution at a given \code{lambda} and \code{epsilon}
 solves quadratic programming(QP) for SVR.
 }
 \examples{
-#' set.seed(1)
+\donttest{
+# set.seed(1)
 n <- 30
 p <- 50
 
@@ -37,7 +38,7 @@ x <- matrix(rnorm(n*p), n, p)
 e <- rnorm(n, 0, 1)
 beta <- c(1, 1, rep(0, p-2))
 y <- x \%*\% beta + e
-solve.svr(x, y)
+solve.svr(x, y) }
 
 }
 \author{

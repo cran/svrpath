@@ -4,16 +4,16 @@
 #'
 #' @param x The data matrix (n x p) with n rows (observations) on p variables (columns)
 #' @param y The real number valued response variable
-#' @param svr.eps epsilon in epsion-insensitive loss function
+#' @param svr.eps An epsilon in epsilon-insensitive loss function
 #' @param kernel.function This is a user-defined function. Provided are \code{poly.kernel} (the default, with parameter set to default to a linear kernel) and \code{radial.kernel}
-#' @param param.kernel the parameter(s) for the kernel. For this radial kernel, the parameter is known in the fields as "gamma". For the polynomial kernel, it is the "degree"
+#' @param param.kernel The parameter(s) for the kernel. For this radial kernel, the parameter is known in the fields as "gamma". For the polynomial kernel, it is the "degree"
 #' @param lambda.min The smallest value of lambda for termination of the algorithm. Default is \code{lambda = 1e-8}
-#' @param ridge Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}#'
-#' @param eps a small machine number which is used to identify minimal step sizes
+#' @param ridge Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}
+#' @param eps A small machine number which is used to identify minimal step sizes
 #' @param ... Generic compatibility
-#' @return a 'svrpath' object is returned, for which there are print, \code{lambda} values, corresponding values of \code{theta} for each data point.
-#' @author Dohyun Kim, Seung Jun Shin
-#' @seealso \code{\link{predict.svrpath}}, \code{\link{plot.svrpath}}
+#' @return A 'svrpath' object is returned, for which there are \code{lambda} values and corresponding values of \code{theta} for each data point.
+#' @author Do Hyun Kim, Seung Jun Shin
+#' @seealso \code{\link{predict.svrpath}}, \code{\link{plot.svrpath}},  \code{\link{epspath}}
 #' @examples
 #' set.seed(1)
 #' n <- 30

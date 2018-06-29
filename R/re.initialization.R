@@ -1,5 +1,4 @@
-#' @rdname svrpath-internal
-#' @export
+#' @importFrom stats step
 re.Initialization <- function(x,y,Left, Right, Center, svr.eps= 1, lambda = lambda[k],
                                kernel.function = poly.kernel,param.kernel = 1){
   Left.cp <- Left

@@ -12,22 +12,22 @@ svrpath(x, y, svr.eps = 1, kernel.function = radial.kernel,
 
 \item{y}{The real number valued response variable}
 
-\item{svr.eps}{epsilon in epsion-insensitive loss function}
+\item{svr.eps}{An epsilon in epsilon-insensitive loss function}
 
 \item{kernel.function}{This is a user-defined function. Provided are \code{poly.kernel} (the default, with parameter set to default to a linear kernel) and \code{radial.kernel}}
 
-\item{param.kernel}{the parameter(s) for the kernel. For this radial kernel, the parameter is known in the fields as "gamma". For the polynomial kernel, it is the "degree"}
+\item{param.kernel}{The parameter(s) for the kernel. For this radial kernel, the parameter is known in the fields as "gamma". For the polynomial kernel, it is the "degree"}
 
-\item{ridge}{Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}#'}
+\item{ridge}{Sometimes the algorithm encounters singularities; in this case a small value of ridge can help, default is \code{ridge = 1e-8}}
 
-\item{eps}{a small machine number which is used to identify minimal step sizes}
+\item{eps}{A small machine number which is used to identify minimal step sizes}
 
 \item{lambda.min}{The smallest value of lambda for termination of the algorithm. Default is \code{lambda = 1e-8}}
 
 \item{...}{Generic compatibility}
 }
 \value{
-a 'svrpath' object is returned, for which there are print, \code{lambda} values, corresponding values of \code{theta} for each data point.
+A 'svrpath' object is returned, for which there are \code{lambda} values and corresponding values of \code{theta} for each data point.
 }
 \description{
 This algorithm computes the entire regularization path for the support vector regression  with a relatively low cost compared to quadratic programming problem.
@@ -45,8 +45,8 @@ svr.eps <- 1
 obj <- svrpath(x, y, svr.eps = svr.eps)
 }
 \seealso{
-\code{\link{predict.svrpath}}, \code{\link{plot.svrpath}}
+\code{\link{predict.svrpath}}, \code{\link{plot.svrpath}},  \code{\link{epspath}}
 }
 \author{
-Dohyun Kim, Seung Jun Shin
+Do Hyun Kim, Seung Jun Shin
 }

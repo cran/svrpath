@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{The svrpath object}
 
-\item{intercept}{if it is \code{TRUE}, then provides a intercept path plot.}
+\item{intercept}{If it is \code{TRUE}, then an intercept path plot is given.}
 
 \item{...}{Generic compatibility}
 }
@@ -20,18 +20,10 @@ The entire solution path of SVR solution as a function of \code{lambda}.
 produces a plot of the SVR \code{lambda} path.
 }
 \examples{
-set.seed(1)
-n <- 30
-p <- 50
-
-x <- matrix(rnorm(n*p), n, p)
-e <- rnorm(n, 0, 1)
-beta <- c(1, 1, rep(0, p-2))
-y <- x \%*\% beta + e
-svr.eps <- 1
-obj <- svrpath(x, y, svr.eps = svr.eps)
-plot(obj)
+\donttest{
+# The 'obj' is given by examples description of svrpath().
+plot(obj, lty = 2, lwd = 2, col = 2, cex.lab = 1.5) }
 }
 \author{
-Dohyun Kim, Seung Jun Shin
+Do Hyun Kim, Seung Jun Shin
 }

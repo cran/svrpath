@@ -3,22 +3,14 @@
 #' produces a plot of the SVR \code{lambda} path.
 #'
 #' @param x The svrpath object
-#' @param intercept if it is \code{TRUE}, then provides a intercept path plot.
+#' @param intercept If it is \code{TRUE}, then an intercept path plot is given.
 #' @param ... Generic compatibility
 #' @return The entire solution path of SVR solution as a function of \code{lambda}.
-#' @author Dohyun Kim, Seung Jun Shin
+#' @author Do Hyun Kim, Seung Jun Shin
 #' @examples
-#' set.seed(1)
-#' n <- 30
-#' p <- 50
-#'
-#' x <- matrix(rnorm(n*p), n, p)
-#' e <- rnorm(n, 0, 1)
-#' beta <- c(1, 1, rep(0, p-2))
-#' y <- x %*% beta + e
-#' svr.eps <- 1
-#' obj <- svrpath(x, y, svr.eps = svr.eps)
-#' plot(obj)
+#' \donttest{
+#' # The 'obj' is given by examples description of svrpath().
+#' plot(obj, lty = 2, lwd = 2, col = 2, cex.lab = 1.5) }
 #' @importFrom graphics abline lines plot title
 #'
 #' @export
@@ -35,14 +27,16 @@ plot.svrpath <- function(x, intercept = FALSE, ...){
   lambda <- c(lambda,0)
   new <- TRUE
   if(intercept == T){
-    plot(x$lambda, theta0, type = "l", ylab = "intercept", xlab = "lambda",
+    par(mfrow = c(1,1), mar = c(5,5,4,2) + 0.1)
+    plot(x$lambda, theta0, type = "l", ylab = "intercept", xlab = expression(lambda),
          main = "Regularization Path for SVR (intercept)",...)
     abline(v = x$lambda, col = "gray", lty=2)
     new <- FALSE
   }
   if(new == T){
+  par(mfrow = c(1,1), mar = c(5,5,4,2) + 0.1)
   plot(lambda, result[1,], type="n", xlim = c(0, max(lambda))
-                , ylim =c(-1,1), ylab="theta",...)
+                , ylim =c(-1,1), ylab=expression(theta),xlab = expression(lambda), ...)
   for(i in 2:(length(y))){
     lines(lambda, result[i,],...)
   }
